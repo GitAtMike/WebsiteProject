@@ -6,18 +6,18 @@ html {
 }
 
 .hero {
-  background-image: url("/public/pizza.jpg"); /* Replace with your image URL */
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Avoids repeating the image */
-  height: 100%; /* Full viewport height */
+  background-image: url("/public/pizza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
   padding-top: 7%;
   padding-bottom: 7%;
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: white; /* Text color */
+  color: white;
   position: relative;
   padding-left: 7em;
   padding-right: 7em;
@@ -30,22 +30,17 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Adds a dark overlay for better text visibility */
-  z-index: 1; /* Places overlay below content */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2; /* Ensures content is above the overlay */
+  z-index: 2;
 }
 
 .hero-title {
-  font-size: 3rem; /* Adjust the font size */
+  font-size: 3rem;
   margin: 0;
 }
 
@@ -69,5 +64,5 @@ html {
 
 .hero-btn:hover {
   background: #ddd;
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  transform: scale(1.1);
 }
