@@ -1,0 +1,73 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.hero {
+  background-image: url("/public/pizza.jpg"); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Avoids repeating the image */
+  height: 100%; /* Full viewport height */
+  padding-top: 7%;
+  padding-bottom: 7%;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  text-align: center;
+  color: white; /* Text color */
+  position: relative;
+  padding-left: 7em;
+  padding-right: 7em;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adds a dark overlay for better text visibility */
+  z-index: 1; /* Places overlay below content */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
+}
+
+.hero-title {
+  font-size: 3rem; /* Adjust the font size */
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-family: "Inter";
+  margin: 20px 0;
+}
+
+.hero-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #000;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: #ddd;
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
