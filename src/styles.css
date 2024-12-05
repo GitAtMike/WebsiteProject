@@ -1,0 +1,72 @@
+/* Button Styles */
+
+/* Button-Specific Styles */
+button.home {
+  background-color: black;
+}
+
+button.recipes {
+  background-color: black;
+}
+
+button.create {
+  background-color: black;
+}
+
+button.favorites {
+  background-color: black;
+}
+
+button.login {
+  background-color: black;
+}
+
+main {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  flex-direction: column; /* Ensures the text and image stack vertically */
+  min-height: 60vh; /* Adjust this value to control vertical spacing */
+  text-align: center; /* Centers text inside the container */
+}
+
+.home-image {
+  display: block;
+  margin: 20px auto; /* Center the image */
+  max-width: 100%; /* Ensure responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+
+/* Recipe Page Layout */
+.recipe-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between search bar, button, and recipe items */
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Controls Section (Search Bar + Favorites Button) */
+/* Recipe Page Controls */
+.recipe-controls {
+  display: flex;
+  justify-content: space-between; /* Space out search bar and button */
+  align-items: center;
+}
+
+.search-bar {
+  margin-bottom: 20px; /* Adds space between each search bar */
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 100%; /* Ensure the bars are responsive */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.home-button:hover {
+  background-color: #ff4500; /* Darker red on hover */
+}

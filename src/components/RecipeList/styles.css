@@ -1,0 +1,61 @@
+/* Container for the recipe grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+}
+
+/* Each recipe card */
+.recipe-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.recipe-card:hover {
+  transform: scale(1.03); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Recipe card headings */
+.recipe-card h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Recipe card descriptions */
+.recipe-card p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Ingredients list */
+.recipe-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.recipe-card button {
+  background-color: #ff6347; /* Tomato red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-card button:hover {
+  background-color: #ffa07a; /* Light salmon on hover */
+}

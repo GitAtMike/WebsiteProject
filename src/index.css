@@ -1,18 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+/* Global Styles */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: "Fraunces", sans-serif;
+  padding: 0;
+  background-color: #f5f5dc; /* Beige background for below the bar */
+  color: #008080; /* Teal text for below the bar */
 }
 
-h5 {
-  font-family: "Inter";
-  font-weight: 500;
-  color: #ececec;
+/* Navigation Bar Styles */
+nav {
+  background-color: #ff4500; /* Bold red navigation bar */
+  padding: 10px 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Center navigation links */
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white; /* White text for nav links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Below Navigation Content Styles */
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f5f5dc; /* Beige background */
+  color: #008080; /* Teal text */
+  border-radius: 5px;
+}
+
+h1,
+h2 {
+  color: #006666; /* Teal headings below the navigation */
+  margin-bottom: 20px;
+}
+
+p {
+  color: #008080; /* Teal text for paragraphs */
 }
