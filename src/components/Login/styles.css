@@ -1,19 +1,18 @@
-/* Global Styles */
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5dc; /* Beige background */
-  color: #1a1a1a; /* Teal text */
+  background-color: #f5f5dc;
+  color: #1a1a1a;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-/* Navigation Bar Styles */
+
 nav {
-  background-color: #ff4500; /* Bold red navigation bar */
+  background-color: #ff4500;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -31,7 +30,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white; /* White text for nav links */
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
@@ -41,7 +40,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Login Form Container */
 main {
   padding: 30px 20px;
   max-width: 400px;
@@ -52,22 +50,21 @@ main {
   text-align: center;
 }
 
-/* Headings */
+
 h1,
 h2 {
-  color: #1a1a1a; /* Teal headings */
+  color: #1a1a1a;
   margin-bottom: 20px;
   font-size: 24px;
 }
 
-/* Paragraphs */
 p {
   color: #1a1a1a;
   font-size: 14px;
   margin: 10px 0;
 }
 
-/* Form Styles */
+
 form {
   display: flex;
   flex-direction: column;
@@ -97,9 +94,9 @@ input:focus {
   box-shadow: 0 0 3px rgba(0, 102, 102, 0.5);
 }
 
-/* Buttons */
+
 button {
-  background-color: #ff6347; /* Tomato red */
+  background-color: #ff6347;
   color: white;
   border: none;
   border-radius: 5px;
@@ -111,7 +108,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffa07a; /* Light salmon on hover */
+  background-color: #ffa07a;
   transform: scale(1.05);
 }
 
@@ -127,9 +124,9 @@ button:hover {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Footer Link for Register/Login */
+
 span {
-  color: #ff4500; /* Highlighted text for switch link */
+  color: #ff4500;
   cursor: pointer;
   font-weight: bold;
 }
@@ -138,7 +135,6 @@ span:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   main {
     padding: 20px;
