@@ -26,7 +26,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// User schema
+
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// Recipe schema
+
 const recipeSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -63,7 +63,7 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// ROUTES
+
 app.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -80,7 +80,6 @@ app.post("/register", async (req, res) => {
     console.error("Error during registration:", err);
 
     if (err.code === 11000) {
-      // Duplicate key error (email already exists)
       return res.status(400).json({ error: "Email already in use" });
     }
 
@@ -93,7 +92,7 @@ app.post("/login", async (req, res) => {
 
   try {
     console.log("Login attempt:", { email, password });
-    console.log("JWT_SECRET:", process.env.JWT_SECRET); // Debugging line
+    console.log("JWT_SECRET:", process.env.JWT_SECRET); 
 
     const user = await User.findOne({ email });
     if (!user) {
@@ -109,7 +108,7 @@ app.post("/login", async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      process.env.JWT_SECRET, // Ensure this is defined
+      process.env.JWT_SECRET, 
       { expiresIn: "1h" }
     );
 
@@ -123,7 +122,7 @@ app.post("/login", async (req, res) => {
 
 app.get("/recipes", async (req, res) => {
   try {
-    const recipes = await Recipe.find(); // Fetch all recipes from the database
+    const recipes = await Recipe.find();
     res.status(200).json(recipes);
   } catch (err) {
     console.error("Error fetching recipes:", err);
@@ -147,7 +146,7 @@ app.post("/recipes", authenticateToken, async (req, res) => {
     const newRecipe = new Recipe({
       title,
       ingredients,
-      createdBy: req.user.id, // Ensure the user ID is saved
+      createdBy: req.user.id, 
     });
 
     const savedRecipe = await newRecipe.save();
@@ -161,7 +160,7 @@ app.post("/recipes", authenticateToken, async (req, res) => {
 app.get("/favorites", authenticateToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).populate("favorites");
-    res.status(200).json(user.favorites); // Return populated favorites
+    res.status(200).json(user.favorites); 
   } catch (err) {
     console.error("Error fetching favorites:", err);
     res.status(500).json({ error: "Failed to fetch favorites" });
@@ -179,7 +178,7 @@ app.post("/favorites/:id", authenticateToken, async (req, res) => {
     const updatedFavorites = await User.findById(req.user.id).populate(
       "favorites"
     );
-    res.status(200).json(updatedFavorites.favorites); // Return the updated favorites
+    res.status(200).json(updatedFavorites.favorites); 
   } catch (err) {
     console.error("Error adding favorite:", err);
     res.status(500).json({ error: "Failed to add favorite" });
