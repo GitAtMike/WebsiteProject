@@ -5,7 +5,6 @@ import "./styles.css";
 function RecipeList({ favorites, setFavorites }) {
   const [recipes, setRecipes] = useState([]);
 
-  // Fetch recipes from the database
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
@@ -46,8 +45,8 @@ function RecipeList({ favorites, setFavorites }) {
         throw new Error(errorData.error || "Failed to add to favorites");
       }
 
-      const updatedFavorites = await response.json(); // Get updated favorites from backend
-      setFavorites(updatedFavorites); // Update state with backend response
+      const updatedFavorites = await response.json();
+      setFavorites(updatedFavorites);
       alert(`Added "${recipe.title}" to favorites!`);
     } catch (error) {
       console.error("Error adding favorite:", error);
