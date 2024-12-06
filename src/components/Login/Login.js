@@ -51,10 +51,6 @@ function Login({ setIsLoggedIn }) {
     }
   };
 
-  const goHome = () => {
-    navigate("/home");
-  };
-
   return (
     <main>
       <form onSubmit={handleSubmit}>
@@ -92,9 +88,6 @@ function Login({ setIsLoggedIn }) {
           </span>
         </p>
       </form>
-      <button type="button" className="back-button" onClick={goHome}>
-        &#8592; Back to Home
-      </button>
     </main>
   );
 }

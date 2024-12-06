@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.SERVER_PORT || 8888;
 
 app.use(
   cors({
@@ -26,7 +26,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
@@ -34,7 +33,6 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
-
 
 const recipeSchema = new mongoose.Schema({
   title: String,
@@ -48,7 +46,7 @@ const Recipe = mongoose.model("Recipe", recipeSchema);
 
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1]; 
+  const token = authHeader && authHeader.split(" ")[1];
 
   if (!token) {
     return res.status(401).json({ error: "Unauthorized" });
@@ -56,13 +54,12 @@ const authenticateToken = (req, res, next) => {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
-      return res.status(403).json({ error: "Forbidden" }); 
+      return res.status(403).json({ error: "Forbidden" });
     }
-    req.user = user; 
+    req.user = user;
     next();
   });
 };
-
 
 app.post("/register", async (req, res) => {
   const { email, password } = req.body;
@@ -92,7 +89,7 @@ app.post("/login", async (req, res) => {
 
   try {
     console.log("Login attempt:", { email, password });
-    console.log("JWT_SECRET:", process.env.JWT_SECRET); 
+    console.log("JWT_SECRET:", process.env.JWT_SECRET);
 
     const user = await User.findOne({ email });
     if (!user) {
@@ -108,7 +105,7 @@ app.post("/login", async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      process.env.JWT_SECRET, 
+      process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
 
@@ -146,7 +143,7 @@ app.post("/recipes", authenticateToken, async (req, res) => {
     const newRecipe = new Recipe({
       title,
       ingredients,
-      createdBy: req.user.id, 
+      createdBy: req.user.id,
     });
 
     const savedRecipe = await newRecipe.save();
@@ -160,7 +157,7 @@ app.post("/recipes", authenticateToken, async (req, res) => {
 app.get("/favorites", authenticateToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).populate("favorites");
-    res.status(200).json(user.favorites); 
+    res.status(200).json(user.favorites);
   } catch (err) {
     console.error("Error fetching favorites:", err);
     res.status(500).json({ error: "Failed to fetch favorites" });
@@ -178,7 +175,7 @@ app.post("/favorites/:id", authenticateToken, async (req, res) => {
     const updatedFavorites = await User.findById(req.user.id).populate(
       "favorites"
     );
-    res.status(200).json(updatedFavorites.favorites); 
+    res.status(200).json(updatedFavorites.favorites);
   } catch (err) {
     console.error("Error adding favorite:", err);
     res.status(500).json({ error: "Failed to add favorite" });
