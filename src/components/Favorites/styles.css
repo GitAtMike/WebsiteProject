@@ -1,6 +1,6 @@
 .favorites-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Display in a 3-column grid */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -16,7 +16,7 @@
 }
 
 .favorite-card:hover {
-  transform: scale(1.03); /* Slight zoom effect on hover */
+  transform: scale(1.03);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -45,7 +45,7 @@
 }
 
 .favorite-card button {
-  background-color: #ff6347; /* Tomato red */
+  background-color: #ff6347;
   color: white;
   border: none;
   border-radius: 5px;
