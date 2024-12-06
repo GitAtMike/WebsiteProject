@@ -18,7 +18,6 @@ function Home({ isLoggedIn, setIsLoggedIn }) {
 
   return (
     <div>
-      {/* Navigation Bar */}
       <nav>
         <ul>
           <li>
@@ -46,15 +45,12 @@ function Home({ isLoggedIn, setIsLoggedIn }) {
           </li>
         </ul>
       </nav>
-
-      {/* Main Content */}
       <main>
         <h1>Welcome to the Recipe Website!</h1>
         <p>
           Explore a variety of recipes, save your favorites, and even create
           your own. Use the buttons above to navigate through the site!
         </p>
-        {/* Display the Image */}
         <img src={cookbookImage} alt="Cookbook" className="home-image" />
       </main>
     </div>
