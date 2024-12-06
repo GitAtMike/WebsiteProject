@@ -4,7 +4,7 @@ import "./styles.css";
 
 function CreateRecipe({ recipes, setRecipes }) {
   const [recipeName, setRecipeName] = useState("");
-  const [ingredients, setIngredients] = useState([""]); // Start with one empty ingredient input
+  const [ingredients, setIngredients] = useState([""]);
 
   const handleCreateRecipe = async (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ function CreateRecipe({ recipes, setRecipes }) {
 
     const newRecipe = {
       title: recipeName,
-      ingredients: ingredients.filter((ing) => ing.trim()), // Remove empty ingredients
+      ingredients: ingredients.filter((ing) => ing.trim()),
     };
 
     try {
@@ -24,7 +24,7 @@ function CreateRecipe({ recipes, setRecipes }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // Add token for authentication
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(newRecipe),
       });
@@ -36,11 +36,10 @@ function CreateRecipe({ recipes, setRecipes }) {
 
       const savedRecipe = await response.json();
 
-      // Update recipes state with the new recipe
+
       setRecipes([...recipes, savedRecipe]);
       alert(`Recipe "${recipeName}" created successfully!`);
 
-      // Clear the form fields
       setRecipeName("");
       setIngredients([""]);
     } catch (error) {
