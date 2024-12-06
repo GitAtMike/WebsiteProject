@@ -1,15 +1,13 @@
-/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5dc; /* Beige background for below the bar */
-  color: #008080; /* Teal text for below the bar */
+  background-color: #f5f5dc; 
+  color: #008080;
 }
 
-/* Navigation Bar Styles */
 nav {
-  background-color: #ff4500; /* Bold red navigation bar */
+  background-color: #ff4500;
   padding: 10px 20px;
 }
 
@@ -18,7 +16,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: center; /* Center navigation links */
+  justify-content: center;
 }
 
 nav ul li {
@@ -26,7 +24,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white; /* White text for nav links */
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
@@ -35,22 +33,21 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Below Navigation Content Styles */
 main {
   padding: 20px;
   max-width: 900px;
   margin: auto;
-  background-color: #f5f5dc; /* Beige background */
-  color: #008080; /* Teal text */
+  background-color: #f5f5dc;
+  color: #008080;
   border-radius: 5px;
 }
 
 h1,
 h2 {
-  color: #006666; /* Teal headings below the navigation */
+  color: #006666;
   margin-bottom: 20px;
 }
 
 p {
-  color: #008080; /* Teal text for paragraphs */
+  color: #008080;
 }
