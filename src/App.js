@@ -23,16 +23,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Redirect root route to /login */}
         <Route path="/" element={<Navigate to="/login" replace />} />
-
-        {/* Login Page */}
         <Route
           path="/login"
           element={<Login setIsLoggedIn={setIsLoggedIn} />}
         />
-
-        {/* Authenticated Routes */}
         {isLoggedIn && (
           <>
             <Route
@@ -48,7 +43,7 @@ function App() {
                   recipes={recipes}
                   favorites={favorites}
                   setFavorites={setFavorites}
-                  setRecipes={setRecipes} // Pass setRecipes to RecipeList
+                  setRecipes={setRecipes}
                 />
               }
             />
@@ -70,8 +65,6 @@ function App() {
             />
           </>
         )}
-
-        {/* Redirect unknown routes */}
         <Route
           path="*"
           element={<Navigate to={isLoggedIn ? "/home" : "/login"} replace />}
